@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Customer{% endblock %}
+
+{% block content %}
+<h2>Add Customer</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- This will now include the Bootstrap classes -->
+    <button type="submit" class="btn btn-primary">Add Customer</button>
+    <a href="{% url 'customer_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
